@@ -27,10 +27,11 @@ def pollList(request):
         
             return Response(serializer.data)
         case 'POST':
-            serializer = PollRequestSerializer(data=request.data)
+            serializer = PollSerializer(data=request.data)
             if not serializer.is_valid():
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
             serializer.save()
+            
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET', 'PUT', 'DELETE'])
@@ -42,7 +43,7 @@ def getOne(request, id):
             return Response(serializer.data)
         case 'PUT':
             poll = Poll.objects.get(id=id)
-            serializer = PollRequestSerializer(poll, data=request.data)
+            serializer = PollSerializer(poll, data=request.data)
             if not serializer.is_valid():
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
             serializer.save()
