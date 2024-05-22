@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'mutsa-poll-db',
         'USER': 'admin',
         'PASSWORD': 'admin0677',
-        'HOST': 'mutsa-poll-db.c9wqiukqewnw.us-east-1.rds.amazonaws.com',
+        'HOST': 'mutsa-poll-db.cxy2weumyb2j.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306'
     }
 }
